@@ -2,6 +2,19 @@ import React from "react";
 import Item from "./Item";
 
 function ShoppingList({ items }) {
+  const [selectedCategory, setSelectedCategory] = useState("Filter by category")
+
+console.log(selectedCategory, setSelectedCategory)
+
+const displayTheItems = items.filter((item) => {
+  if (selectedCategory === "Filter by category")
+  return true;
+
+  return item.category === selectedCategory;
+
+
+})
+
   return (
     <div className="ShoppingList">
       <div className="Filter">
